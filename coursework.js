@@ -1,23 +1,20 @@
-// Get the form element
 var form = document.querySelector('#contactForm');
 
-// Add event listener for form submission
 form.addEventListener('submit', function(event){
-  event.preventDefault(); // Prevent the form from being submitted
+  event.preventDefault(); 
 
-  // Get the input field values
+  
   var nameInput = document.querySelector('#name');
   var emailInput = document.querySelector('#email');
   var orderInput = document.querySelector('#order');
 
-  // Validate the name field
+ 
   if (nameInput.value.trim() === '') {
     alert('Please enter your name.');
     nameInput.focus();
-    return; // Stop further execution
+    return; 
   }
 
-  // Validate the email field
   var email = emailInput.value.trim();
   var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (email === '') {
@@ -30,17 +27,13 @@ form.addEventListener('submit', function(event){
     return;
   }
 
-  // Validate the message field
+  
   if (orderInput.value.trim() === '') {
     alert('Please enter your order.');
     orderInput.focus();
     return;
   }
 
-  // If all validations pass, you can proceed with form submission
-  // Uncomment the following line to submit the form
   form.submit();
 
-  // Optionally, you can reset the form after successful submission
-  // form.reset();
 });
