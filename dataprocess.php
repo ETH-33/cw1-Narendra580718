@@ -1,6 +1,6 @@
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($data["REQUEST_METHOD"] == "POST") {
 
     // Retrieve form data
 
@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Prepare and execute the SQL query to insert data into the "orders" table
 
-        $sql = "INSERT INTO orders (Name, Email, Order) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO data (Name, Email, Order) VALUES (?, ?, ?)";
 
         $stmt = $conn->prepare($sql);
 
@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // If the form is not submitted through POST, redirect back to the form page
 
-    header("Location: contact.html");
+    header("Location: index.html#contactinfo");
 
     exit();
 
